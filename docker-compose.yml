@@ -1,0 +1,22 @@
+
+version: '3'
+services:
+    
+  netcat:
+    image:    gophernet/netcat
+    container_name: netcat
+    networks:
+      default: 
+        ipv4_address: 11.0.0.2
+      
+  pyspark:
+    image:    jaeo/spark
+    command:  pyspark
+    extra_hosts:
+      - "netcat:11.0.0.2"   
+      
+networks:
+  default:
+    ipam:
+     config:
+       - subnet: 11.0.0.0/16
