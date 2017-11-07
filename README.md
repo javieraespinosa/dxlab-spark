@@ -1,5 +1,23 @@
 
-# Stream processing with Spark 
+
+# Graph Processing with Spark GraphX
+
+
+The objective of this section is to help you get started with the [Playing with graphs using GraphX](http://vargas-solar.com/datacentric-sciences/hands-on/graph-processing/) hands-on.
+
+Open a terminal and download the docker dependencies:
+
+`$ docker-compose pull`
+
+
+After that, you can start the graphx environment by executing the following instruction:
+
+`$ docker-compose run graphx`
+
+This will launch a spark-shell interpreter where you can play with graphix. 
+
+
+# Stream Processing with Spark Streaming
 
 ## 1. Objective
 The objective of this hands on is to let you “touch” the challenges implied in processing streams. In class, we will use Spark for implementing a streaming version of word count and an example using:
