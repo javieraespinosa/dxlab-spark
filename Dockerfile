@@ -1,10 +1,10 @@
 
 ##################################################
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Spark streaming Tutorial
+## Spark, Spark Graph & Spark Streaming Tutorial
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##################################################
 
 FROM jaeo/spark
 
-RUN pip install --quiet tweepy argparse
+RUN pip install --quiet tweepy argparse numpy

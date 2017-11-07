@@ -3,15 +3,25 @@ version: '3'
 services:
 
   pyspark:
-    image:    dxlab-spark
+    image:    jaeo/dxlab-spark
     command:  pyspark
     extra_hosts:
       - "netcat:11.0.0.10"   
       - "tweets:11.0.0.11"  
-    
+    volumes:
+      - ./data/example.txt:/root/example.txt
+
+
+  graphx:
+    image:    gettyimages/spark:1.3.0-hadoop-2.4
+    command:  spark-shell
+    volumes:
+      - ./data/graphx-wiki-edges.txt:/graphx-wiki-edges.txt
+      - ./data/graphx-wiki-vertices.txt:/graphx-wiki-vertices.txt
+      
     
   netcat:
-    image:    dxlab-spark
+    image:    jaeo/dxlab-spark
     networks:
       default: 
         ipv4_address: 11.0.0.10
@@ -19,7 +29,7 @@ services:
 
   tweets:
     build:    .
-    image:    dxlab-spark
+    image:    jaeo/dxlab-spark
     command:  python python/tweets-tcp.py 11.0.0.11 9999
     working_dir: /root
     volumes:
